@@ -98,13 +98,13 @@
     <div id="background-layer"></div><div id="noise-overlay"></div><div id="canvas-container"></div>
     <canvas id="visualizer-canvas"></canvas>
     <div id="ui-layer">
-        <h1 id="main-title">to c</h1>
-        <div class="guide-container"><span class="guide-text" id="guide-text">đang chuẩn bị...</span></div>
+        <h1 id="main-title">for c :3</h1>
+        <div class="guide-container"><span class="guide-text" id="guide-text">Đang chuẩn bị...</span></div>
     </div>
     <div id="webcam-wrapper"><video id="webcam" autoplay playsinline muted></video><div id="status-bar">Init...</div></div>
     
     <audio id="audio-bg" src="./audio.mp3" loop></audio>
-    <!-- audio id="audio-letter" src="./audio2.mp3" loop></audio> -->
+    <audio id="audio-letter" src="./audio2.mp3" loop></audio>
 
     <script type="module">
         import * as THREE from 'three';
@@ -161,7 +161,6 @@
         let animSlide = { opacity: 0 }; let animSinglePhoto = { opacity: 0, scale: 0 };
         let gestureBuffer = { pinch: 0, open: 0, heart: 0, fist: 0 };
 
-
         async function init() {
             updateStatus("Loading Engine...");
             initThree();
@@ -182,7 +181,10 @@
             await initMediaPipe();
             setupEvents();
             initVisualizer2D();
+            
 
+
+            animate();
         }
 
         function hideLoading() {
@@ -423,7 +425,9 @@
             sparkleSystem.geometry.attributes.color.needsUpdate = true;
             instancedMesh.instanceMatrix.needsUpdate = true; instancedMesh.instanceColor.needsUpdate = true;
         }
+        
         function animate() {
+
             requestAnimationFrame(animate);
             const dt = clock.getDelta();
 
@@ -581,8 +585,8 @@
         function updateStatus(msg) { const el = document.getElementById('status-bar'); if(el) el.innerText = msg; }
         function setupEvents() { window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); composer.setSize(window.innerWidth, window.innerHeight); bloomPass.resolution.set(window.innerWidth/4, window.innerHeight/4); }); }
 
+       setupEvents();
         init();
-        animate();
     </script>
 </body>
 </html>
