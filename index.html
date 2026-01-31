@@ -129,10 +129,10 @@
         const IMG_FOX = './target.png'; 
         const IMG_PEN = './target2.png'; 
         const IMG_LETTER = './mess.png'; 
-        const IMG_PHOTO_SINGLE = './photo.png';
+        const IMG_PHOTO_SINGLE = './mess.png';
         
         const SLIDE_IMAGES = ['./image/1.png', './image/2.png', './image/3.png', './image/4.png', './image/5.png', './image/6.png'];
-        
+
         let scene, camera, renderer, composer, clock, bloomPass;
         let mainGroup, instancedMesh, messageMesh, singlePhotoMesh, slideshowGroup; 
         let glitterSystem, starSystem, whiteStarSystem, sparkleSystem; 
@@ -577,7 +577,7 @@
             }
             else if (newState === 'READING_LETTER') { stopAllAudio(); const a2 = document.getElementById('audio-letter'); if(a2) a2.play().catch(e=>console.log("Audio block")); updateStatus("Opening..."); }
             else if (newState === 'BACK_TO_FOX') { stopAllAudio(); updateStatus("Returning to Fox..."); }
-            else if (newState === 'SLIDESHOW') updateStatus("Our Memories (Heart Detected) ❤️");
+            else if (newState === 'SLIDESHOW') updateStatus("lúc nào cũng cười như thế yêu nhé hì hì");
             else if (newState === 'VIEW_PHOTO') updateStatus("Look at this!");
             appState = newState;
         }
